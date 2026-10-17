@@ -1,6 +1,6 @@
 # Frontier model system cards & independent analysis
 
-Last updated: 2026-10-12 (automated scheduled sweep).
+Last updated: 2026-10-17 (automated scheduled sweep).
 
 Scope: real-frontier models from closed labs (Anthropic, OpenAI, Google) and open-weight labs (DeepSeek, Moonshot/Kimi, Z.ai/GLM), plus cyber-focused models where they appear. Small/cheap tiers (Haiku, Sonnet, Flash-Lite, etc.) are deliberately omitted, except Gemini 3.8 Flash, the newest Google card.
 
@@ -34,6 +34,7 @@ Source: OpenAI Deployment Safety Hub (HTML, saved with a text extraction).
 |---|---|---|
 | Gemini 3 Pro (Nov 2025) | [pdf](google/Gemini-3-Pro-Model-Card.pdf) · [FSF report](google/fsf-gemini-3-pro.html) | see cross-model incident reports below |
 | Gemini 3.1 Pro (Feb 2026) | [pdf](google/Gemini-3-1-Pro-Model-Card.pdf) | none found |
+| Gemini 4 Argon (Oct 13, 2026; Google's new flagship, first rollout to cyber defenders) | [model card pdf](google/Gemini-4-Argon-Model-Card.pdf) · [safety report pdf](google/gemini_4_safety_report.pdf) | Irregular: [Gemini 4 Argon](analysis/irregular/assessing-gemini-4-argon-against-offensive-security-benchmarks.md) (Oct 13; 12/12 CyScenarioBench subset challenges solved) |
 | Gemini 3.8 Flash (Sep 2026) | [pdf](google/Gemini-3-8-Flash-Model-Card.pdf) | none found |
 
 ### Open weights (`open-weights/`)
@@ -55,6 +56,7 @@ UK AISI (`analysis/aisi/`):
 - [Frontier AI Trends Report: 5 key findings](analysis/aisi/5-key-findings-from-our-first-frontier-ai-trends-report.md)
 
 Irregular (`analysis/irregular/`):
+- [Addressing recent incidents: ongoing findings and path forward](analysis/irregular/addressing-recent-incidents-ongoing-findings-and-path-forward.md) (Aug 14)
 - [Containment challenges: testing the boundaries of cyber evaluations](analysis/irregular/containment-challenges-testing-the-boundaries-of-cyber-evaluations.md) (Oct 5)
 - [FrontierCyber benchmark](analysis/irregular/frontiercyber.md) (Jun 22)
 - [Emerging evidence of a capability shift](analysis/irregular/emerging-evidence-of-a-capability-shift.md)
@@ -62,10 +64,12 @@ Irregular (`analysis/irregular/`):
 - Other labs' models, for context: [Meta Muse Spark 1.1](analysis/irregular/assessing-muse-spark-1.1-against-offensive-security-benchmarks.md)
 
 ## Known gaps / watchlist
-- **Gemini 4 Argon** (announced Sep 30, gated to cyber defenders via Google's Fairwind program): no model card published yet per press coverage. Check deepmind.google/models/model-cards.
 - **OpenAI GPT-5.6-Cyber** (Aug 2026, restricted access): no system card found on the Deployment Safety Hub.
 - **Mistral Large 4**: weights, tech report and model card promised by end of Oct 2026 (secondary reports).
 - **Meta Muse Spark 1.1**: closed model with a safety report, not fetched (ai.meta.com not retrieved). Irregular analysis included above.
 - **Open-weight Hugging Face model cards** (Kimi-K3, GLM-5.2/5.3, DeepSeek-V4.1-Flash, V4-Pro-0813) and DeepSeek's own transparency-center PDFs are not saved: the sandbox proxy blocks deepseek.com, huggingface.co and github.com. GLM-5.2/5.3 and DeepSeek V4.1 have no tech report in the repo.
 - Older cards (Opus 4.6 and earlier, Gemini 2.5, GPT-5 and earlier) intentionally not included.
 - Possible AISI/Irregular pages for Fable 5.x/Mythos 5.x were not found in their listings as of this run.
+- **Meta Muse Wonder / Wonder Full** (Oct 12): launch model card and a fuller safety report promised; about.fb.com blocked by the sandbox proxy, so not saved. No AISI/Irregular analysis found yet.
+- **Reflection Beam** (open-weight, Oct 16): Irregular assessed it (23/40 atomic tasks, 0/10 CyScenarioBench; rated Limited for cyber), so it is not frontier and is not saved. Safety report: reflection.ai/beam-safety-report.
+- Skipped as non-frontier/non-cyber: Claude Haiku 5.5 and Sonnet 5.5, OpenAI GPT-Live-1.1, Gemini Nano Banana 2.1.
