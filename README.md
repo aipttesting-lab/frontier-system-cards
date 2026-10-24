@@ -1,6 +1,6 @@
 # Frontier model system cards & independent analysis
 
-Last updated: 2026-10-12 (automated scheduled sweep).
+Last updated: 2026-10-24 (automated scheduled sweep).
 
 Scope: real-frontier models from closed labs (Anthropic, OpenAI, Google) and open-weight labs (DeepSeek, Moonshot/Kimi, Z.ai/GLM), plus cyber-focused models where they appear. Small/cheap tiers (Haiku, Sonnet, Flash-Lite, etc.) are deliberately omitted, except Gemini 3.8 Flash, the newest Google card.
 
@@ -34,6 +34,7 @@ Source: OpenAI Deployment Safety Hub (HTML, saved with a text extraction).
 |---|---|---|
 | Gemini 3 Pro (Nov 2025) | [pdf](google/Gemini-3-Pro-Model-Card.pdf) · [FSF report](google/fsf-gemini-3-pro.html) | see cross-model incident reports below |
 | Gemini 3.1 Pro (Feb 2026) | [pdf](google/Gemini-3-1-Pro-Model-Card.pdf) | none found |
+| Gemini 4 Argon (Oct 13, 2026; cyber-focused flagship) | [pdf](google/Gemini-4-Argon-Model-Card.pdf) · [safety report / FSF](google/Gemini-4-Safety-Report.pdf) · [web page](google/gemini-4-argon-model-card-page.html) | Irregular: [Gemini 4 Argon](analysis/irregular/assessing-gemini-4-argon-against-offensive-security-benchmarks.md) (Oct 13) |
 | Gemini 3.8 Flash (Sep 2026) | [pdf](google/Gemini-3-8-Flash-Model-Card.pdf) | none found |
 
 ### Open weights (`open-weights/`)
@@ -41,10 +42,12 @@ Source: OpenAI Deployment Safety Hub (HTML, saved with a text extraction).
 |---|---|---|
 | DeepSeek-V4 (Pro / Flash) | [tech report (arXiv 2606.19348)](open-weights/deepseek/deepseek-v4-technical-report-2606.19348.pdf) | none found |
 | Kimi K3 (Jul 2026) | [tech report (arXiv 2607.24653)](open-weights/kimi/kimi-k3-technical-report-2607.24653.pdf) | AISI/CAISI: [preliminary cyber assessment](analysis/aisi/preliminary-assessment-of-kimi-k3s-cyber-capabilities.md); Irregular: [Kimi K3](analysis/irregular/assessing-kimi-k3-against-offensive-security-benchmarks.md) |
+| Reflection Beam (Oct 2026; new lab's first open-weight model, rated "Limited" cyber offense) | safety report not fetched (reflection.ai blocked) | Irregular: [Beam](analysis/irregular/assessing-reflection-beam-against-offensive-security-benchmarks.md) (Oct 16) |
 | GLM-5 (Z.ai) | [tech report (arXiv 2602.15763)](open-weights/glm/glm-5-technical-report-2602.15763.pdf) | Irregular: [GLM-5.2](analysis/irregular/assessing-glm-5.2-against-offensive-security-benchmarks.md) |
 
 ## Cross-model analysis
 UK AISI (`analysis/aisi/`):
+- [Investigating alignment failures in AISI's incident](analysis/aisi/investigating-alignment-failures-in-aisis-incident.md) (Oct 23; Mythos 5 unsanctioned supply-chain attack, other models too)
 - [Cheating behaviour in frontier model evaluations](analysis/aisi/cheating-behaviour-in-frontier-model-evaluations.md) (Jul 21)
 - [Incident report: unsanctioned agent behaviour during cyber testing](analysis/aisi/incident-report-unsanctioned-agent-behaviour-during-cyber-testing.md) (Aug 4)
 - [How far behind the frontier are open-weight models on cyber](analysis/aisi/how-far-behind-the-frontier-are-leading-open-weight-models-on-cyber.md) (Jul 17)
@@ -62,7 +65,9 @@ Irregular (`analysis/irregular/`):
 - Other labs' models, for context: [Meta Muse Spark 1.1](analysis/irregular/assessing-muse-spark-1.1-against-offensive-security-benchmarks.md)
 
 ## Known gaps / watchlist
-- **Gemini 4 Argon** (announced Sep 30, gated to cyber defenders via Google's Fairwind program): no model card published yet per press coverage. Check deepmind.google/models/model-cards.
+- **Meta Muse Wonder** (Oct 12, Meta's first frontier model): model card/safety report not fetched (ai.meta.com blocked by proxy); fuller safety report was promised.
+- **Reflection Beam safety report** (reflection.ai/beam-safety-report): blocked by proxy, not saved.
+- **Anthropic Claude Haiku 5.5 / Sonnet 5.5** (Sep-Oct 2026) and **OpenAI GPT-Live-1.1** (voice): omitted as non-frontier/out of scope.
 - **OpenAI GPT-5.6-Cyber** (Aug 2026, restricted access): no system card found on the Deployment Safety Hub.
 - **Mistral Large 4**: weights, tech report and model card promised by end of Oct 2026 (secondary reports).
 - **Meta Muse Spark 1.1**: closed model with a safety report, not fetched (ai.meta.com not retrieved). Irregular analysis included above.
