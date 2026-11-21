@@ -1,8 +1,8 @@
 # Frontier model system cards & independent analysis
 
-Last updated: 2026-11-14 (automated scheduled sweep).
+Last updated: 2026-11-21 (automated scheduled sweep).
 
-Scope: real-frontier models from closed labs (Anthropic, OpenAI, Google) and open-weight labs (DeepSeek, Moonshot/Kimi, Z.ai/GLM), plus cyber-focused models where they appear. Small/cheap tiers (Haiku, Sonnet, Flash-Lite, etc.) are deliberately omitted, except Gemini 3.8 Flash, the newest Google card.
+Scope: real-frontier models from closed labs (Anthropic, OpenAI, Google) and open-weight labs (DeepSeek, Moonshot/Kimi, Z.ai/GLM), plus cyber-focused models where they appear. Small/cheap tiers (Haiku, Sonnet, Flash-Lite, etc.) are deliberately omitted, except Gemini 3.8 Flash and Gemini 4 Hydrogen (kept because its safety report has a full cyber-capability chapter and it hits Google's cyber CCL alert threshold).
 
 Analysis comes only from high-reputation evaluators: UK AISI (incl. joint UK AISI/CAISI work) and Irregular. Files under `analysis/` are text extractions of the source pages (figures and tables are on the source). The source URL is at the top of each file.
 
@@ -30,6 +30,7 @@ Source: OpenAI Deployment Safety Hub (HTML, saved with a text extraction).
 | GPT-6.1 Sol (addendum) | [txt](openai/gpt-6-1-sol-system-card.txt) · [html](openai/gpt-6-1-sol-system-card.html) | none found |
 | GPT-6.1 Terra (Oct 26, 2026; addendum) | [txt](openai/gpt-6-1-terra-system-card.txt) · [html](openai/gpt-6-1-terra-system-card.html) | none found |
 | GPT-6 Cyber (Nov 5, 2026; cyber-focused) | [txt](openai/gpt-6-cyber-system-card.txt) · [html](openai/gpt-6-cyber-system-card.html) | Irregular: [GPT-6 Cyber](analysis/irregular/assessing-gpt-6-cyber-against-offensive-security-benchmarks.md) (Nov 5) |
+| **GPT-6.2 Astra / GPT-6.2 Sol (Nov 17, 2026; OpenAI's most capable deployed model; both Critical for cyber, High bio; Astra first released model at High AI self-improvement)** | [pdf](openai/gpt-6-2-astra-sol-system-card.pdf) · [txt](openai/gpt-6-2-astra-sol-system-card.txt) · [html](openai/gpt-6-2-astra-sol-system-card.html) | Irregular: [GPT-6.2 Astra](analysis/irregular/assessing-gpt-6.2-astra-against-offensive-security-benchmarks.md) (Nov 17). The card also includes UK AISI external evaluations of cyber safeguards, alignment and monitorability |
 | GPT-6 Sol / Luna, Oct 2026 update | [txt](openai/gpt-6-october-system-card.txt) · [html](openai/gpt-6-october-system-card.html) | none found |
 
 ### Google DeepMind (`google/`)
@@ -39,6 +40,8 @@ Source: OpenAI Deployment Safety Hub (HTML, saved with a text extraction).
 | Gemini 3.1 Pro (Feb 2026) | [pdf](google/Gemini-3-1-Pro-Model-Card.pdf) | none found |
 | Gemini 4 Argon (Oct 13, 2026; FSF: cannot rule out cyber CCL) | [pdf](google/Gemini-4-Argon-Model-Card.pdf) · [safety & security report](google/gemini-4-argon-safety-security-report.pdf) · [web card](google/gemini-4-argon-model-card-page.html) | Irregular: [Gemini 4 Argon](analysis/irregular/assessing-gemini-4-argon-against-offensive-security-benchmarks.md) (Oct 13) |
 | Gemini 4 Carbon (Nov 10, 2026; general-release model built on Argon; cyber CCL not ruled out, mitigations deployed) | [pdf](google/Gemini-4-Carbon-Model-Card.pdf) · [safety & security report](google/gemini-4-carbon-safety-security-report.pdf) | none yet |
+| Gemini 4 Neon (Nov 18, 2026; mid tier between Carbon and Hydrogen, adapted from Carbon; cyber CCL "cannot be ruled out", carried forward from Argon) | [pdf](google/Gemini-4-Neon-Model-Card.pdf) (safety & security report "coming soon") | none yet |
+| Gemini 4 Hydrogen (Nov 12, 2026; fast tier adapted from Carbon; cyber CCL not reached but alert threshold reached) | [pdf](google/Gemini-4-Hydrogen-Model-Card.pdf) · [safety & security report](google/gemini-4-hydrogen-safety-security-report.pdf) | none yet |
 | Gemini 3.8 Flash (Sep 2026) | [pdf](google/Gemini-3-8-Flash-Model-Card.pdf) | none found |
 
 ### Open weights (`open-weights/`)
@@ -82,8 +85,11 @@ Irregular (`analysis/irregular/`):
 - **Mistral Large 4**: weights, tech report and model card promised by end of Oct 2026 (secondary reports).
 - **Meta Muse Spark 1.1**: closed model with a safety report, not fetched (ai.meta.com not retrieved). Irregular analysis included above.
 - **Open-weight model cards**: Kimi K3.1 Pro and GLM-5.3 cards now saved via the Hugging Face Hub connector. DeepSeek's transparency-center PDFs remain unreachable (deepseek.com blocked). DeepSeek V4.1-Flash / V4.1-Flash-1017 (Nov 10) are Flash-tier and omitted; no new DeepSeek Pro-tier release or tech report found.
-- **Independent analysis pending** for Claude Fable 5.2 / Mythos 5.2, Gemini 4 Carbon and Kimi K3.1 Pro: none on AISI or Irregular as of 2026-11-14.
-- OpenAI GPT-6 Luna Oct 29 addendum, GPT-Rosalind-6 (bio), GPT-Live-1.1 and ChatGPT Images 2.6 cards omitted as non-frontier/non-cyber.
+- **Independent analysis pending** for Claude Fable 5.2 / Mythos 5.2, Gemini 4 Carbon / Neon / Hydrogen, GPT-6.2 Sol and Kimi K3.1 Pro: none on AISI or Irregular as of 2026-11-21.
+- **Gemini 4 Neon Safety & Security Report**: marked "coming soon" on the model card; fetch when published.
+- **Alibaba Qwen4-Max** (Nov 16, per secondary reporting): out of the current lab scope; no system card found.
+- **Open-weight labs**: no new DeepSeek, Kimi or GLM frontier release or tech report since 2026-11-14 (checked HF Hub and arXiv on 2026-11-21).
+- OpenAI GPT-6 Luna Oct 29 addendum, CSAM image classifier card (Nov 16), GPT-Rosalind-6 (bio), GPT-Live-1.1 and ChatGPT Images 2.6 cards omitted as non-frontier/non-cyber.
 - Older cards (Opus 4.6 and earlier, Gemini 2.5, GPT-5 and earlier) intentionally not included.
 - Anthropic Haiku 5.5 / Sonnet 5.5 cards (Sep-Oct 2026) deliberately omitted as non-frontier tiers; Fable 5.2 / Mythos 5.2 added Nov 2026.
 - Possible AISI/Irregular pages for Fable 5.x/Mythos 5.x were not found in their listings as of this run.
